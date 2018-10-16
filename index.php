@@ -1,4 +1,5 @@
 <?php
+require_once "header.php";
 require_once "lib/functions.php";
 ?>
     <h1>Главная страница</h1>
@@ -17,3 +18,5 @@ require_once "lib/functions.php";
 
 privet($_POST['name'],$_POST['vozrast']);
 pifagor();
+
+require_once "footer.php";
