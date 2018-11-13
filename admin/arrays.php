@@ -44,8 +44,8 @@ foreach ($auto as $k=>$v)
 echo "<br><br>";
 
 
-
-
+if($_GET)
+{
     echo "По запросу \"{$_GET['model']}\" найдено:<br>";
     foreach ($auto[$_GET['model']] as $k1=>$v1)
     {
@@ -63,6 +63,8 @@ echo "<br><br>";
         }
 
     }
+
+}
 
 /*    define("NAME","Даниил");
     echo NAME;*/
