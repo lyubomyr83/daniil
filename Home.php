@@ -10,6 +10,7 @@ class Home
     public $roof_material;
     public $roof_color;
 
+
     public  function getInfo()
     {
         echo "Цвет стен: ".$this->wall_color."<br>";
@@ -20,25 +21,25 @@ class Home
         echo "Материал крыши: ".$this->roof_material."<br><br>";
     }
 }
-$myHome = new Home();
-$myHome->doors = 2;
-$myHome->roof_color ="Серый";
-$myHome->roof_material="Метало-черепица";
-$myHome->windows=2;
-$myHome->wall_color="Белый";
-$myHome->wall_material="Гипрок";
 
-$friendHome = new Home();
-$friendHome->doors=1;
-$friendHome->roof_color ="Коричневый";
-$friendHome->roof_material="Метало-черепица";
-$friendHome->windows=2;
-$friendHome->wall_color="Голубой";
-$friendHome->wall_material="Бетон";
+class superHome extends Home
+{
+    public function __construct($wc,$wm,$w,$d,$rc,$rm)
+    {
+        $this->wall_color = $wc;
+        $this->wall_material = $wm;
+        $this->window = $w;
+        $this->doors = $d;
+        $this->roof_color = $rc;
+        $this->roof_material = $rm;
 
-$friendHome->getInfo();
-$myHome->getInfo();
+        $this->getInfo();
+    }
 
 
+}
+
+$myHome = new superHome("Белый","Гипрок",2,2,"Серый","Метало-черепица");
+$friendHome = new superHome("Голубой","Бетон",2,1,"Коричневый","Метало-черепица");
 
 
