@@ -1,5 +1,8 @@
 <?php
 
+require_once "header.php";
+
+
 class Car
 {
     protected $type = "Автомобиль";
@@ -30,9 +33,10 @@ class Car
         static::$col ++;
     }
 
-    public function getInfo()
+    public function getInfo($param)
     {
-        echo $this->type."<br>";
+        echo "<div class=\"card\">";
+        echo "<h3>".$this->type."</h3>";
         echo "Марка: ".$this->brand."<br>";
         echo "Цвет машины: ".$this->car_color."<br>";
         echo "Материал машины: ".$this->car_material."<br>";
@@ -40,9 +44,16 @@ class Car
         echo "Двери: ".$this->doors."<br>";
         echo "Скорость машины: ".$this->car_speed."<br>";
         echo "Состояние машины: ".$this->car_condition."<br>";
-        echo "Скорость машины: ".$this->car_cost."<br>";
+        echo "Стоимость машины: ".$this->car_cost."<br>";
         echo "Год выпуска: ".$this->car_year."<br>";
-        echo "<br>";
+        if($param)
+        {
+            foreach ($param as $k=>$v)
+            {
+                echo $k.": ".$v;
+            }
+        }
+        echo "</div>";
     }
 
     public static function getCol()
@@ -67,9 +78,8 @@ class Bus extends Car
 
     public function getInfo()
     {
-        echo "Количество мест: ".$this->bus_seats."<br>";
-        parent::getInfo();
 
+        parent::getInfo(["Количество мест"=>$this->bus_seats]);
     }
 
 
@@ -80,17 +90,30 @@ class Truck extends Car
     protected $type = "Грузовик";
     protected $truck_cargo;
     protected static $col; // количество
+
+    public function __construct($tc,$br, $cc, $cm, $w, $d, $cs, $c_con, $cco, $cy)
+    {
+        parent::__construct($br, $cc, $cm, $w, $d, $cs, $c_con, $cco, $cy);
+        $this->truck_cargo = $tc;
+    }
+
+    public function getInfo()
+    {
+        parent::getInfo(["Грузоподъёмность"=>$this->truck_cargo]);
+    }
 }
 
 $myCar = new Car("Ford","Черный","Железо",6,2,230,"Новая",1500000,2004);
 $myCar->getInfo();
-$friendCar = new Bus(18,"Mercedes","Голубой","Бетон",6,4,200,"Разбитая",1200000,1999);
+$friendCar = new Bus(18,"Mercedes","Синиий","Дерево",20,3,220,"Новый",120034000000,1956);
 $friendCar->getInfo();
-$friendCar2 = new Bus(60,"Mercedes","Голубой","Бетон",6,4,200,"Разбитая",1200000,1999);
+$friendCar2 = new Bus(60,"Mercedes","Желтый","Бетон",10,2,150,"Помят",1200678,1234);
 $friendCar2->getInfo();
-$friendCar3 = new Truck("Камаз","Голубой","Бетон",6,4,200,"Разбитая",1200000,1999);
+$friendCar3 = new Truck( 15,"Камаз","Голубой","МОРОЖЕНОЕ",18,2,180,"РАЗБИТ",1204566,1996);
 $friendCar3->getInfo();
 
 Car::getCol();
 Bus::getCol();
 Truck::getCol();
+
+require_once "footer.php";
