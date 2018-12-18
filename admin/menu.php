@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if($_SESSION['loged'])
 {
     echo "<a href=\"?logout=yes\">Выход</a>&nbsp;";

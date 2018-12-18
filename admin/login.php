@@ -1,8 +1,8 @@
 <?php
-require_once "lib/functions.php";
-require_once "users.php";
+session_start();
+require_once "header.php";
 
 if($_POST)
 {
-    autorisation($_POST['login'],$_POST['pass'],$users);
+    $autorisation = new Login($_POST);
 }

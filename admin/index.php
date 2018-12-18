@@ -5,12 +5,13 @@ echo 'Админка<br><br>';
 require_once "menu.php";
 if($_GET['page']=="login")
 {
-    require_once "form.php";
+    require_once "login_form.php";
 }
 
 if($_GET['logout'])
 {
-    logout();
+    $logout = new Login();
+    $logout->logout();
 }
 
 require_once "footer.php";
