@@ -10,7 +10,7 @@ if($_GET['page']=="login")
 
 if($_GET['logout'])
 {
-    $logout = new Login();
+    $logout = new app\classes\Login();
     $logout->logout();
 }
 

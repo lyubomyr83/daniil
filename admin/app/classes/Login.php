@@ -1,4 +1,5 @@
 <?php
+namespace app\classes;
 
 class Login extends Db
 {

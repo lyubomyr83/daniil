@@ -4,5 +4,5 @@ require_once "header.php";
 
 if($_POST)
 {
-    $autorisation = new Login($_POST);
+    $autorisation = new app\classes\Login($_POST);
 }
