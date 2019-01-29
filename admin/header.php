@@ -10,6 +10,8 @@ spl_autoload_register(function ($name)
     require_once($name.'.php');
 });
 
+$menu = new \app\classes\CMenu();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

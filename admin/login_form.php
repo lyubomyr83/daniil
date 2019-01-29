@@ -1,6 +1,6 @@
 <form class="form-signin" method="post" action="login.php">
     <div class="text-center">
-        <img class="mb-4" src="../img/logo.jpg" alt="" width="72" height="72">
+        <img class="mb-4" src="../img/logo.png" alt="" width="150" >
         <h1 class="h3 mb-3 font-weight-normal">Авторизация</h1>
         <label for="inputLogin" class="sr-only">Логин</label>
         <input  type="text" id="inputLogin" class="form-control" placeholder="введите ваш логин" required autofocus name="login">
