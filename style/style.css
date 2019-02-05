@@ -1,16 +1,5 @@
-html,
-body {
-    height: 100%;
-}
-
-body {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-align: center;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: #f5f5f5;
+.menu ul{
+    list-style-type: none;
 }
 
 .form-signin {
@@ -42,18 +31,6 @@ body {
     border-top-left-radius: 0;
     border-top-right-radius: 0;
 }
-body
-{
-    background-color:teal;
-    color:purple;
-}
-
-h1
-{
-    color: darkgoldenrod;
-    width: 350px;
-
-}
 
 .car
 {
@@ -72,6 +49,3 @@ h1
     margin-bottom: 5px;
 }
 
-a{
-    color: white;
-}
